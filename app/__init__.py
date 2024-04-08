@@ -3,10 +3,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_migrate import Migrate
+from flask_cors import CORS
 
 # Create Flask application instance
 app = Flask(__name__)
 app.config.from_object(Config)
+CORS(app)
 
 # Initialize SQLAlchemy
 db = SQLAlchemy(app)

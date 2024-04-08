@@ -34,7 +34,7 @@ def delete_user_controller(user_id):
 # Book management controllers
 def create_book_controller(request):
     data = request.json
-    new_book = Book(title=data['title'], genre=data['genre'], availability=True,
+    new_book = Book(title=data['title'], genre=data['genre'], author=data['author'], availability=True,
                     copies_available=data['copies_available'], total_copies=data['total_copies'])
     db.session.add(new_book)
     db.session.commit()
